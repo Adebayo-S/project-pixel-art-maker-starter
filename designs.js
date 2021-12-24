@@ -14,6 +14,10 @@ let table = document.getElementById('pixelCanvas');
 const form = document.getElementById('sizePicker');
 form.addEventListener('submit', makeGrid);
 
+function changeColor(e){
+    e.target.style.backgroundColor = color;
+}
+
 
 
 function makeGrid(event) {
@@ -44,9 +48,7 @@ function makeGrid(event) {
 
     //color grid pixels onClick
     cells.forEach(function (cell) {
-        cell.addEventListener("click", function () {
-            cell.style.backgroundColor = color;
-        });
+        cell.addEventListener("click", changeColor);
     });
 
 }
